@@ -9,7 +9,10 @@ import { RouterOutlet } from '@angular/router'
   template: `
     <main>
       <header class='brand-name'>
-        <img class='brand-logo' src='/favicon.ico' alt='logo' aria-hidden='true' />
+        <div class='container'>
+          <img class='brand-logo' src='../assets/angular-svgrepo-com.svg' alt='logo' aria-hidden='true' />
+          <h1 class='title'>{{ title }}</h1>
+        </div>
       </header>
       <section class='content'>
         <app-home></app-home>
@@ -19,5 +22,5 @@ import { RouterOutlet } from '@angular/router'
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'homes'
+  title = 'Angular Titorial'
 }
