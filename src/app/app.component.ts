@@ -1,21 +1,23 @@
 import { Component } from '@angular/core'
 import { HomeComponent } from './home/home.component'
-import { RouterOutlet } from '@angular/router'
+import { RouterModule } from '@angular/router'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HomeComponent, RouterOutlet],
+  imports: [HomeComponent, RouterModule],
   template: `
     <main>
-      <header class='brand-name'>
-        <div class='container'>
-          <img class='brand-logo' src='../assets/angular-svgrepo-com.svg' alt='logo' aria-hidden='true' />
-          <h1 class='title'>{{ title }}</h1>
-        </div>
-      </header>
+      <a [routerLink]="['/']">
+        <header class='brand-name'>
+          <div class='container'>
+            <img class='brand-logo' src='../assets/angular-svgrepo-com.svg' alt='logo' aria-hidden='true' />
+            <h1 class='title'>{{ title }}</h1>
+          </div>
+        </header>
+      </a>
       <section class='content'>
-        <app-home></app-home>
+        <router-outlet></router-outlet>
       </section>
     </main>
   `,
